@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <v-app>
-      <router-view/>
+      <page-header />
+      <v-content class="margin">
+        <v-container fluid>
+          <router-view />
+        </v-container>
+      </v-content>
     </v-app>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PageHeader
+  }
 }
 </script>
 
@@ -20,6 +28,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.margin {
+  margin-top: 50px;
 }
 </style>
