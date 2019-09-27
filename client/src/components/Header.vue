@@ -15,10 +15,12 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <v-btn depressed dark class="cyan" router to="login">
+      <v-btn depressed dark class="cyan" router to="login"
+        v-if="!$store.state.isUserLoggedIn">
         Login
       </v-btn>
-      <v-btn depressed dark class="cyan" router to="register">
+      <v-btn depressed dark class="cyan" router to="register"
+        v-if="!$store.state.isUserLoggedIn">
         Sign Up
       </v-btn>
     </v-toolbar-items>
