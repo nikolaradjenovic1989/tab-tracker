@@ -9,7 +9,7 @@
     </v-toolbar-title>
 
     <v-toolbar-items>
-      <v-btn depressed dark class="cyan">Browse</v-btn>
+      <v-btn depressed dark class="cyan" router to="songs">Browse</v-btn>
     </v-toolbar-items>
 
     <v-spacer></v-spacer>
@@ -23,6 +23,10 @@
         v-if="!$store.state.isUserLoggedIn">
         Sign Up
       </v-btn>
+      <v-btn depressed dark class="cyan" @click="logout"
+        v-if="$store.state.isUserLoggedIn">
+        Log Out
+      </v-btn>
     </v-toolbar-items>
   </v-app-bar>
 </template>
@@ -32,6 +36,13 @@ export default {
   methods: {
     navigateTo (route) {
       this.$router.push(route)
+    },
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'root'
+      })
     }
   }
 }
