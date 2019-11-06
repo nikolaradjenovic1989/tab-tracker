@@ -32,4 +32,7 @@ export default {
 .margin {
   margin-top: 50px;
 }
+.danger-alert {
+  color: red;
+}
 </style>
