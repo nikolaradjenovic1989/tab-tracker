@@ -21,11 +21,6 @@ export default {
       songs: null
     }
   },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
-  },
   async mounted () {
     // do a request to the backend for all the songs
     this.songs = (await SongsService.index()).data
