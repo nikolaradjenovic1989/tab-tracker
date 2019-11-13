@@ -18,6 +18,8 @@ app.use(bodyParser.json())
 // allows any client to access this server (possible security issue)
 app.use(cors())
 
+require('./passport')
+
 require('./routes')(app)
 
 sequelize.sync({ force: false })
